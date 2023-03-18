@@ -19,7 +19,7 @@
 	<Grid>
 	  <Row>
 		<Column sm={1} md={4} lg={8}>
-		  <!-- {console.log('HERE')}
+		  <!-- {console.log('here')}
 		  {console.log(product)} -->
 		  <img src={getImageSrc(product.image)} alt={product.name} />
 		  <h2>
