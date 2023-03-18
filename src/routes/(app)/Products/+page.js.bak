@@ -1,0 +1,21 @@
+/** @type {import('./$types').PageLoad} */
+export async function load({ fetch }) {
+	const fetchProducts = async () => {
+		// http://localhost:8080/product/
+		// http://localhost:8080/category/list
+		// const productRes = await fetch('https://dummyjson.com/products?limit=10');
+		const productRes = await fetch('http://localhost:8080/category/list');
+		const productData = await productRes.json();
+		return productData.products;
+	};
+	const fetchUsers = async () => {
+		const usersRes = await fetch('https://dummyjson.com/users?limit=10');
+		const usersData = await usersRes.json();
+		return usersData.users;
+	};
+
+	return {
+		products: fetchProducts(),
+		users: fetchUsers()
+	};
+}
